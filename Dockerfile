@@ -14,7 +14,7 @@ RUN apk update \
         && cp -r -f /usr/share/zoneinfo/Asia/Shanghai /etc/localtime
 
 # glibc version
-ENV GLIBC_VERSION 2-29-r0
+ENV GLIBC_VERSION 2.29-r0
 
 # Install glibc
 RUN wget -q -O /etc/apk/keys/sgerrand.rsa.pub https://alpine-pkgs.sgerrand.com/sgerrand.rsa.pub \
