@@ -13,14 +13,12 @@ RUN apk update \
         && rm -rf /var/cache/apk/* \
         && cp -r -f /usr/share/zoneinfo/Asia/Shanghai /etc/localtime
 
-# glibc Version
-ENV GLIBC_VERSION_MAJOR 2
-ENV GLIBC_VERSION_MINOR 29
-ENV GLIBC_VERSION_BUILD r0
+# glibc version
+ENV GLIBC_VERSION 2-29-r0
 
 # Install glibc
 RUN wget -q -O /etc/apk/keys/sgerrand.rsa.pub https://alpine-pkgs.sgerrand.com/sgerrand.rsa.pub \
-    && wget https://github.com/sgerrand/alpine-pkg-glibc/releases/download/${GLIBC_VERSION_MAJOR}.${GLIBC_VERSION_MINOR}-${GLIBC_VERSION_BUILD}/glibc-${GLIBC_VERSION_MAJOR}.${GLIBC_VERSION_MINOR}-${GLIBC_VERSION_BUILD}.apk \
-    && apk add glibc-${GLIBC_VERSION_MAJOR}.${GLIBC_VERSION_MINOR}-${GLIBC_VERSION_BUILD}.apk
+    && wget https://github.com/sgerrand/alpine-pkg-glibc/releases/download/${GLIBC_VERSION}/glibc-${GLIBC_VERSION}.apk \
+    && apk add glibc-${GLIBC_VERSION}.apk
 
 CMD ["/bin/bash"]
