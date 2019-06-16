@@ -5,7 +5,7 @@ MAINTAINER firekcc <lyk_1226@126.com>
 RUN echo "https://mirror.tuna.tsinghua.edu.cn/alpine/v3.9/main/" > /etc/apk/repositories
 
 # glibc version
-ENV GLIBC_VERSION 2.29-r0
+ARG GLIBC_VERSION=2.29-r0
 
 # update apk and install wget and install glibc
 RUN apk update &&\

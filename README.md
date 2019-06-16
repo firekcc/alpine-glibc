@@ -13,7 +13,7 @@
 
 &nbsp;
 
-- *docker build -t alpine-glibc .*
+- *docker build --build-arg GLIBC_VERSION=2.29-r0 -t alpine-glibc .*
 
 - *docker login*
 
